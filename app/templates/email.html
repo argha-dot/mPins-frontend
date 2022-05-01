@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form method="POST" class="auth_container">
+  <ul class="form_container">
+    <li class="form_title">
+      <h1>Enter Email</h1>
+    </li>
+
+    <li class="form_element">
+      <label for="email-id">EMAIL</label>
+      <input type="email" id="email-id" name="email-id" />
+    </li>
+
+    <li class="form_button">
+      <button class="submit_button" type="submit">
+        <a href="{{ url_for('get_otp') }}">Submit</a>
+      </button>
+    </li>
+  </ul>
+</form>
+{% endblock %}
+

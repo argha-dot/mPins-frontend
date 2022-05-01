@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form method="POST" class="auth_container">
+  <ul class="form_container">
+    <li class="form_title">
+      <h1>Enter OTP</h1>
+    </li>
+
+    <li class="form_element">
+      <label for="email">EMAIL</label>
+      <input type="text" id="email" name="email" />
+    </li>
+
+    <li class="form_element">
+      <label for="otp">OTP</label>
+      <input type="password" id="otp" name="otp" />
+    </li>
+
+    <li class="form_button">
+      <button class="submit_button" type="submit">
+        <a href="{{ url_for('get_pin') }}">Submit</a>
+      </button>
+    </li>
+    {% if not is_otp_correct %}
+      OTP INCORRECT TRY AGAIN, 
+      <a href="{{ url_for('get_email') }}">OR GET A NEW ONE</a>
+    {% endif %}
+  </ul>
+</form>
+{% endblock %}

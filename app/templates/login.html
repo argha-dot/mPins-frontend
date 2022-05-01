@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form method="POST" class="auth_container" novalidate>
+  <ul class="form_container">
+    <li class="form_title">
+      <h1>Login</h1>
+    </li>
+
+    <li class="form_element">
+      <label for="id">Your Id:</label>
+      <input type="email" id="id" name="username" />
+    </li>
+
+    <li class="form_element">
+      <label for="passcode">Your Passcode:</label>
+      <input type="password" id="passcode" name="password" />
+    </li>
+
+    <li class="form_button">
+      <button class="submit_button" type="submit">
+        <a href="{{ url_for('get_pin') }}">Submit</a>
+      </button>
+    </li>
+    {% if not is_correct_pass %}
+      Uh-oh something went wrong
+    {% endif %}
+  </ul>
+</form>
+{% endblock %}
